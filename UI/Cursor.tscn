@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Square.png" type="Texture" id=1]
+[ext_resource path="res://UI/Cursor.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Pulse"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 0.5, 2, 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.3, 0.3 ), Vector2( 0.2, 0.2 ) ]
+}
+
+[node name="Cursor" type="Sprite"]
+scale = Vector2( 0.299492, 0.299492 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Pulse"
+anims/Pulse = SubResource( 1 )

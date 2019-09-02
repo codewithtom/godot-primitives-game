@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Enemies/MovingShooter/MovingShooter.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Square.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Enemies/Components/BulletSpawner/BulletSpawner.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.1026, 16.1929 )
+
+[node name="Enemy" type="Area2D" groups=[
+"enemy",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.85098, 0, 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="BulletSpawner" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 20 )
+fire_at_player = true

@@ -1,0 +1,264 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/Level10.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Square.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Enemies/MovingShooter/MovingShooter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Enemies/ScatterShot/ScatterShot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Enemies/StaticShooter/StaticShooter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Spawn/Spawn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Exit/Exit.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.0069, 16.0978 )
+
+[node name="Level" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Walls" type="Node2D" parent="."]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Wall" type="StaticBody2D" parent="Walls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 510.803, 15.8898 )
+scale = Vector2( 32.48, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Wall2" type="StaticBody2D" parent="Walls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 510.803, 560.272 )
+scale = Vector2( 32.48, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall2"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Wall3" type="StaticBody2D" parent="Walls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 15.8119, 281.683 )
+rotation = 1.5708
+scale = Vector2( 17.96, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall3"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Wall4" type="StaticBody2D" parent="Walls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 1007.89, 281.683 )
+rotation = 1.5708
+scale = Vector2( 17.96, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall4"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="TemporaryWalls" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Wall" type="StaticBody2D" parent="TemporaryWalls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 510.803, 199.048 )
+scale = Vector2( 6.16, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TemporaryWalls/Wall"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemporaryWalls/Wall"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Wall2" type="StaticBody2D" parent="TemporaryWalls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 510.803, 363.259 )
+scale = Vector2( 6.16, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TemporaryWalls/Wall2"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemporaryWalls/Wall2"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Wall3" type="StaticBody2D" parent="TemporaryWalls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 429.138, 281.683 )
+rotation = 1.5708
+scale = Vector2( 6.00699, 1.05161 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TemporaryWalls/Wall3"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemporaryWalls/Wall3"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Wall5" type="StaticBody2D" parent="TemporaryWalls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 592.655, 281.683 )
+rotation = 1.5708
+scale = Vector2( 6.00699, 1.05161 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TemporaryWalls/Wall5"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemporaryWalls/Wall5"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Wall4" type="StaticBody2D" parent="TemporaryWalls" groups=[
+"static",
+]]
+editor/display_folded = true
+position = Vector2( 1007.89, 281.683 )
+rotation = 1.5708
+scale = Vector2( 17.96, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="TemporaryWalls/Wall4"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemporaryWalls/Wall4"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Enemy13" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 71.1475, 284.59 )
+offset = Vector2( 0, 100 )
+
+[node name="Enemy14" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 950.577, 284.59 )
+offset = Vector2( 0, 100 )
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 104.18, 83.2673 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 922.116, 83.2673 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 105.038, 488.806 )
+rotation = 3.14159
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 922.974, 488.806 )
+rotation = 3.14159
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 419.887, 66.4821 )
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 419.887, 507.363 )
+rotation = 3.14159
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 775.624, 66.4821 )
+
+[node name="Enemy11" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 775.624, 507.363 )
+rotation = 3.14159
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 248.433, 66.4821 )
+
+[node name="Enemy10" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 248.433, 507.363 )
+rotation = 3.14159
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 604.17, 66.4821 )
+
+[node name="Enemy12" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 604.17, 507.363 )
+rotation = 3.14159
+
+[node name="Spawn" parent="." instance=ExtResource( 6 )]
+position = Vector2( 510.003, 325.02 )
+
+[node name="Exit" parent="." instance=ExtResource( 7 )]
+position = Vector2( 508.965, 249.177 )
+next_level_name = "Level11"
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "3"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
